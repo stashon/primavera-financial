@@ -6,12 +6,9 @@ Thumbs.db
 *.log
 
 # ==============================================================================
-# 🔵 VISUAL STUDIO CODE (Your Editor)
+# 🔵 VISUAL STUDIO CODE
 # ==============================================================================
-# Ignore personal workspace state
 .vscode/*
-
-# ! means "DO NOT IGNORE". We want to keep shared team settings.
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -21,38 +18,34 @@ Thumbs.db
 # ==============================================================================
 # 🟠 BACKEND (JAVA & SPRING BOOT)
 # ==============================================================================
-# Maven Build Output (CRITICAL: Never commit compiled code)
 **/target/
 **/bin/
-
-# Compiled Class files
 *.class
-
-# Packaged Files
 *.jar
 *.war
 *.ear
-
-# Eclipse / IntelliJ metadata (Keep the repo clean of IDE specifics)
 .classpath
 .project
 .settings/
 .idea/
 *.iml
-
-# Secrets & Local Configs
 **/application-local.properties
 **/secrets.properties
 
 # ==============================================================================
-# 🟣 FRONTEND (REACT & NODE)
+# 🟣 FRONTEND (REACT, VITE, NODE)
 # ==============================================================================
-# Dependencies (CRITICAL: Never commit this huge folder)
+# Dependencies - CRITICAL: Never commit these
 **/node_modules/
+**/.pnp
+.pnp.js
 
-# Build Outputs (Production bundles)
+# Build Outputs
 **/dist/
 **/build/
+**/coverage/
+
+# Testing
 **/coverage/
 
 # Environment Variables (Security Risk)
@@ -62,13 +55,15 @@ Thumbs.db
 .env.test.local
 .env.production.local
 
-# npm/yarn logs
+# Vite / Tooling logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo
 
 # ==============================================================================
-# 🔴 DOCKER & INFRASTRUCTURE
+# 🔴 DOCKER & LOCAL INFRA
 # ==============================================================================
-# Local overrides for docker-compose
 docker-compose.override.yml
+postgres-data/
